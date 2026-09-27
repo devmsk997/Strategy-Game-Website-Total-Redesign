@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORTRESS | Competitive Strategy Game</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- MAIN APP CONTAINER -->
+    <div class="app-layout">
+
+        <!-- SIDEBAR NAVIGATION -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-logo"><i class="fa-solid fa-chess-rook"></i></div>
+                <div class="brand-text">
+                    <h2>FORTRESS</h2>
+                    <span class="badge-tactical">TACTICAL v2.4</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-item active" data-section="dashboard">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Command Center</span>
+                </a>
+                <a href="#backgrounds" class="nav-item" data-section="backgrounds">
+                    <i class="fa-solid fa-image"></i>
+                    <span>Website Backgrounds</span>
+                    <span class="count-tag">20</span>
+                </a>
+                <a href="#boards" class="nav-item" data-section="boards">
+                    <i class="fa-solid fa-chess-board"></i>
+                    <span>Board Themes</span>
+                    <span class="count-tag">20</span>
+                </a>
+                <a href="#pairing" class="nav-item" data-section="pairing">
+                    <i class="fa-solid fa-star"></i>
+                    <span>Default Pairing</span>
+                </a>
+                <a href="#gameplay" class="nav-item" data-section="gameplay">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <span>Live Match Simulation</span>
+                </a>
+                <a href="#mobile" class="nav-item" data-section="mobile">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    <span>Mobile UX Preview</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-mini-card">
+                    <div class="user-avatar">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80" alt="Commander">
+                        <span class="status-dot"></span>
+                    </div>
+                    <div class="user-info">
+                        <h4>Commander Vex</h4>
+                        <p>Elo: 2145 (Grandmaster)</p>
+                    </div>
+                </div>
+                <button class="theme-toggle-btn" id="themeToggle" title="Toggle Light/Dark Theme">
+                    <i class="fa-solid fa-moon"></i>
+                    <span class="theme-text">Dark Mode</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="main-content">
+
+            <!-- TOP HEADER -->
+            <header class="top-header">
+                <div class="header-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search matches, players, replays, tactics...">
+                </div>
+                <div class="header-actions">
+                    <button class="action-btn" title="Notifications">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <button class="action-btn" title="Tactical Settings">
+                        <i class="fa-solid fa-gear"></i>
+                    </button>
+                    <a href="https://test.fortress-game.com" target="_blank" class="btn-primary-glow">
+                        <i class="fa-solid fa-globe"></i> Visit Live Site
+                    </a>
+                </div>
+            </header>
+
+            <!-- SECTION 1: COMMAND CENTER / DASHBOARD -->
+            <section id="dashboard" class="content-section active">
+                <div class="section-hero">
+                    <div>
+                        <h1>Competitive Strategy Command Center</h1>
+                        <p>A modernized, high-contrast, immersive UI engineered for tactical depth and lightning-fast player decisions.</p>
+                    </div>
+                    <div class="hero-stats-row">
+                        <div class="stat-pill">
+                            <span class="stat-label">Global Rank</span>
+                            <span class="stat-value">#42</span>
+                        </div>
+                        <div class="stat-pill">
+                            <span class="stat-label">Win Rate</span>
+                            <span class="stat-value text-accent">78.4%</span>
+                        </div>
+                        <div class="stat-pill">
+                            <span class="stat-label">Active Lobbies</span>
+                            <span class="stat-value">1,429</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DESIGN SYSTEM PILLARS -->
+                <div class="pillars-grid">
+                    <div class="pillar-card">
+                        <div class="pillar-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <h3>Gameplay First</h3>
+                        <p>Zero visual clutter. High-contrast piece distinction and instantaneous move validation keep absolute focus on tactical execution.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <div class="pillar-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>Visceral Materials</h3>
+                        <p>Subtle tactile surfaces like brushed steel, monolithic stone, and dense wood provide physical weight without distraction.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <div class="pillar-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                        <h3>True Mobile UX</h3>
+                        <p>Redesigned mobile touch grids and thumb-friendly controls ensure competitive parity on handheld screens.</p>
+                    </div>
+                </div>
+
+                <!-- MATCH LOBBIES / RECENT MATCHES -->
+                <div class="dashboard-grid">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h3><i class="fa-solid fa-fire"></i> Live Grandmaster Matches</h3>
+                            <button class="btn-text">View All <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                        <div class="match-list">
+                            <div class="match-item">
+                                <div class="player-duel">
+                                    <span class="player-name">Vortex_99 <small>[2200]</small></span>
+                                    <span class="vs-badge">VS</span>
+                                    <span class="player-name">IronClad <small>[2180]</small></span>
+                                </div>
+                                <div class="match-meta">
+                                    <span class="badge-live"><i class="fa-solid fa-circle"></i> Turn 34</span>
+                                    <button class="btn-sm btn-outline">Spectate</button>
+                                </div>
+                            </div>
+                            <div class="match-item">
+                                <div class="player-duel">
+                                    <span class="player-name">Zenith <small>[2050]</small></span>
+                                    <span class="vs-badge">VS</span>
+                                    <span class="player-name">Ares_Tactics <small>[2110]</small></span>
+                                </div>
+                                <div class="match-meta">
+                                    <span class="badge-live"><i class="fa-solid fa-circle"></i> Turn 19</span>
+                                    <button class="btn-sm btn-outline">Spectate</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h3><i class="fa-solid fa-sliders"></i> Quick Design Preferences</h3>
+                        </div>
+                        <div class="preference-controls">
+                            <div class="pref-group">
+                                <label>Interface Theme Mode</label>
+                                <div class="segmented-control">
+                                    <button class="seg-btn active" data-mode="dark">Dark Mode</button>
+                                    <button class="seg-btn" data-mode="light">Light Mode</button>
+                                </div>
+                            </div>
+                            <div class="pref-group">
+                                <label>Tactical Contrast Boost</label>
+                                <input type="range" min="1" max="100" value="85" class="tactical-slider">
+                            </div>
+                            <div class="pref-group">
+                                <label>Board Animation Speed</label>
+                                <div class="segmented-control">
+                                    <button class="seg-btn">Instant</button>
+                                    <button class="seg-btn active">Balanced</button>
+                                    <button class="seg-btn">Cinematic</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: WEBSITE BACKGROUNDS (20 ITEMS) -->
+            <section id="backgrounds" class="content-section">
+                <div class="section-hero">
+                    <div>
+                        <h1>Website Background Collection (20 Proposals)</h1>
+                        <p>Carefully curated texture-based and natural/organic backgrounds designed to provide atmospheric depth without competing with game boards.</p>
+                    </div>
+                    <div class="filter-tabs">
+                        <button class="filter-btn active" data-filter="all">All (20)</button>
+                        <button class="filter-btn" data-filter="texture">Texture-Based (10)</button>
+                        <button class="filter-btn" data-filter="natural">Natural / Organic (10)</button>
+                    </div>
+                </div>
+
+                <div class="gallery-grid" id="bgGallery"></div>
+            </section>
+
+            <!-- SECTION 3: BOARD THEMES (20 ITEMS) -->
+            <section id="boards" class="content-section">
+                <div class="section-hero">
+                    <div>
+                        <h1>Game Board Theme Collection (20 Proposals)</h1>
+                        <p>High-readability tactical board themes ensuring crystal-clear piece selection, legal move highlights, and state recognition.</p>
+                    </div>
+                    <div class="filter-tabs">
+                        <button class="filter-btn active" data-filter-board="all">All Boards (20)</button>
+                        <button class="filter-btn" data-filter-board="texture">Texture Boards (10)</button>
+                        <button class="filter-btn" data-filter-board="natural">Natural Materials (10)</button>
+                    </div>
+                </div>
+
+                <div class="board-gallery-grid" id="boardGallery"></div>
+            </section>
+
+            <!-- SECTION 4: DEFAULT PAIRING & RATIONALE -->
+            <section id="pairing" class="content-section">
+                <div class="section-hero">
+                    <div>
+                        <h1>Recommended Default Pairing</h1>
+                        <p>The optimal harmony of website background and game board theme engineered for the Fortress brand identity.</p>
+                    </div>
+                </div>
+
+                <div class="pairing-showcase">
+                    <div class="pairing-card-main">
+                        <div class="pairing-preview-pane" style="background: linear-gradient(135deg, #181b22, #0d0f14); border: 2px solid var(--accent);">
+                            <div class="preview-board-mini">
+                                <div class="mini-row">
+                                    <div class="mini-cell dark"></div><div class="mini-cell light piece-r"></div><div class="mini-cell dark"></div><div class="mini-cell light piece-k"></div>
+                                </div>
+                                <div class="mini-row">
+                                    <div class="mini-cell light"></div><div class="mini-cell dark highlight"></div><div class="mini-cell light highlight-move"></div><div class="mini-cell dark"></div>
+                                </div>
+                                <div class="mini-row">
+                                    <div class="mini-cell dark"></div><div class="mini-cell light"></div><div class="mini-cell dark piece-p"></div><div class="mini-cell light"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pairing-details">
+                            <span class="badge-accent">Default Selection</span>
+                            <h2>Brushed Steel Surface + Onyx & Titanium Board</h2>
+                            <p class="pairing-desc">
+                                We selected <strong>Brushed Steel</strong> for the website background because its subtle horizontal grain provides a clean, premium, industrial weight without visual noise. Paired with the <strong>Onyx & Titanium</strong> board theme, it creates an uncompromising competitive atmosphere where pieces pop with razor-sharp contrast.
+                            </p>
+                            <ul class="pairing-checklist">
+                                <li><i class="fa-solid fa-check"></i> Exceptional WCAG AAA contrast ratio for long sessions</li>
+                                <li><i class="fa-solid fa-check"></i> Zero visual fatigue during high-stakes competitive matches</li>
+                                <li><i class="fa-solid fa-check"></i> Perfectly balanced dark and light mode adaptation</li>
+                            </ul>
+                            <button class="btn-primary-glow" id="applyDefaultPairing">Apply This Default Pairing</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5: LIVE MATCH SIMULATION -->
+            <section id="gameplay" class="content-section">
+                <div class="section-hero">
+                    <div>
+                        <h1>Live Strategy Game Board Simulator</h1>
+                        <p>Test the proposed UI feedback, move highlighting, and tactical readability in an interactive mini-board.</p>
+                    </div>
+                </div>
+
+                <div class="game-simulator-container">
+                    <div class="chess-board-wrapper">
+                        <div class="board-top-bar">
+                            <span><i class="fa-solid fa-shield"></i> Opponent [Elo 2090]</span>
+                            <span class="timer-badge">04:45</span>
+                        </div>
+                        <div class="chess-grid" id="chessGrid"></div>
+                        <div class="board-bottom-bar">
+                            <span><i class="fa-solid fa-user-shield"></i> Commander Vex [Elo 2145]</span>
+                            <span class="timer-badge active-timer">05:12</span>
+                        </div>
+                    </div>
+                    <div class="game-sidebar-panel">
+                        <div class="panel-header">
+                            <h3>Tactical Log & Feedback</h3>
+                        </div>
+                        <div class="move-history-box" id="moveHistory">
+                            <div class="log-entry"><span>1.</span> Rook to E4 (Controlled Center)</div>
+                            <div class="log-entry"><span>2.</span> Knight to F6 (Defensive Pivot)</div>
+                            <div class="log-entry highlight-log"><span>3.</span> <strong>Select piece on board to test moves</strong></div>
+                        </div>
+                        <div class="simulator-controls">
+                            <button class="btn-primary-glow" id="resetBoardBtn"><i class="fa-solid fa-rotate-right"></i> Reset Simulation</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 6: MOBILE UX PREVIEW -->
+            <section id="mobile" class="content-section">
+                <div class="section-hero">
+                    <div>
+                        <h1>Mobile UX & Touch Ergonomics</h1>
+                        <p>An intentional mobile architecture designed for thumb reach, quick readability, and flawless responsiveness.</p>
+                    </div>
+                </div>
+
+                <div class="mobile-showcase-wrapper">
+                    <div class="device-frame">
+                        <div class="device-notch"></div>
+                        <div class="device-screen">
+                            <div class="mobile-header">
+                                <i class="fa-solid fa-bars"></i>
+                                <h3>FORTRESS MOBILE</h3>
+                                <i class="fa-solid fa-bell"></i>
+                            </div>
+                            <div class="mobile-body">
+                                <div class="mobile-card">
+                                    <div class="card-tag">Active Match #8821</div>
+                                    <h4>Vex vs. DarkLord</h4>
+                                    <p>Turn 12 • Your Move (3:40 remaining)</p>
+                                    <div class="mobile-mini-board">
+                                        <div class="m-row"><div class="m-cell"></div><div class="m-cell active"></div><div class="m-cell"></div></div>
+                                        <div class="m-row"><div class="m-cell highlight"></div><div class="m-cell piece"></div><div class="m-cell"></div></div>
+                                    </div>
+                                    <button class="btn-primary-glow full-width">Open Tactical Board</button>
+                                </div>
+                                <div class="mobile-stats-row">
+                                    <div class="m-stat"><span>Rank</span><strong>#42</strong></div>
+                                    <div class="m-stat"><span>Streak</span><strong>+5 W</strong></div>
+                                </div>
+                            </div>
+                            <div class="mobile-nav-bar">
+                                <i class="fa-solid fa-house active"></i>
+                                <i class="fa-solid fa-gamepad"></i>
+                                <i class="fa-solid fa-trophy"></i>
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-ux-notes">
+                        <h3>Key Mobile UX Principles</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-check-circle"></i> <strong>Thumb-First Layout:</strong> Primary action buttons positioned within natural thumb reach.</li>
+                            <li><i class="fa-solid fa-check-circle"></i> <strong>Simplified Match HUD:</strong> Stripped away heavy desktop sidebars in favor of collapsible drawers.</li>
+                            <li><i class="fa-solid fa-check-circle"></i> <strong>High-Contrast Touch Targets:</strong> Minimum 48px touch targets for instant precision under pressure.</li>
+                            <li><i class="fa-solid fa-check-circle"></i> <strong>Haptic Feedback Cues:</strong> Visual pulse feedback on tap for moves and selections.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- External JS -->
+    <script src="script.js"></script>
+</body>
+</html>
